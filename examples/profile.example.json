@@ -1,0 +1,19 @@
+{
+  "identity": {
+    "username": "",
+    "tin": "",
+    "expected_display_name": ""
+  },
+  "mobile_id": {
+    "international_phone": "",
+    "provider": ""
+  },
+  "tax_context": {
+    "taxpayer_status": "",
+    "recognition_basis": "",
+    "activity_codes": []
+  },
+  "storage": {
+    "private_output_directory": ""
+  }
+}

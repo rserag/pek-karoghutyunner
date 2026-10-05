@@ -1,0 +1,29 @@
+# Personal inputs and evidence belong outside this repository.
+private/
+data/
+outputs/
+profile.json
+profile.local.json
+*.local.json
+.env
+.env.*
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.har
+*.log
+*.xlsx
+*.csv
+*.html
+
+# Generated files and local tooling.
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.DS_Store
+dist/
+build/

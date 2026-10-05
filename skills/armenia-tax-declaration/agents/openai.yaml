@@ -1,0 +1,4 @@
+interface:
+  display_name: "Armenia Quarterly Declaration"
+  short_description: "Prepare and verify quarterly turnover-tax drafts"
+  default_prompt: "Use $armenia-tax-declaration to prepare an unsigned quarterly turnover-tax draft from my finalized income calculation."

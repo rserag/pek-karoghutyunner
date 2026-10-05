@@ -1,0 +1,46 @@
+{
+  "year": 2024,
+  "quarter": 1,
+  "basis": "SYNTHETIC ONLY: payment receipt dates chosen for this arithmetic example",
+  "method_verified": true,
+  "rate_date_rule": "before_receipt",
+  "rounding": {
+    "per_receipt": "half_up",
+    "declaration": "truncate",
+    "tax": "truncate"
+  },
+  "tax_rate": "0.02",
+  "payments": [
+    {
+      "transaction_ref": "SYNTHETIC-USD-001",
+      "receipt_date": "2024-02-29",
+      "currency": "USD",
+      "amount": "100.00",
+      "rate_date": "2024-02-28",
+      "rate_amd": "400.00",
+      "rate_unit": "1",
+      "payer": "Synthetic Example Customer",
+      "memo": "Invented example; not a real payment",
+      "source_page": 1,
+      "rate_source": "https://example.org/synthetic-rates",
+      "verified_on": "2024-03-01"
+    },
+    {
+      "transaction_ref": "SYNTHETIC-JPY-002",
+      "receipt_date": "2024-03-05",
+      "currency": "JPY",
+      "amount": "10000",
+      "rate_date": "2024-03-04",
+      "rate_amd": "250.00",
+      "rate_unit": "100",
+      "rate_source": "https://example.org/synthetic-rates",
+      "verified_on": "2024-03-06"
+    },
+    {
+      "transaction_ref": "SYNTHETIC-AMD-003",
+      "receipt_date": "2024-03-31",
+      "currency": "AMD",
+      "amount": "12345.67"
+    }
+  ]
+}

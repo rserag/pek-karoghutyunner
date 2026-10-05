@@ -1,0 +1,4 @@
+interface:
+  display_name: "Armenia Tax Login"
+  short_description: "Sign in to Armenia’s tax portal using Mobile ID"
+  default_prompt: "Use $armenia-tax-login to sign me into the Armenian tax portal in Chrome."

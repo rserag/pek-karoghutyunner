@@ -1,0 +1,4 @@
+interface:
+  display_name: "Armenia Tax Balances"
+  short_description: "Review tax debt, credits, and payment accounts"
+  default_prompt: "Use $armenia-tax-balances to review my Armenian tax debt and credits and suggest how much additional money to send to each verified receiving account."

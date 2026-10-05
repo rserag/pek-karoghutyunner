@@ -1,0 +1,4 @@
+interface:
+  display_name: "Armenia Quarterly Income"
+  short_description: "Calculate quarterly receipts using CBA rates"
+  default_prompt: "Use $armenia-tax-income to calculate my income for a specified quarter from my bank statement."
