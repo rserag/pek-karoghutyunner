@@ -9,7 +9,8 @@ from urllib.parse import unquote, urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS = ('armenia-tax-login', 'armenia-tax-income',
-          'armenia-tax-declaration', 'armenia-tax-balances')
+          'armenia-tax-declaration', 'armenia-tax-annual-returns',
+          'armenia-tax-turnover-election', 'armenia-tax-balances')
 
 
 def require(condition, message):
@@ -62,6 +63,27 @@ def check():
             require(urlparse(receipt['rate_source']).hostname == 'example.org',
                     'Synthetic fixture must not claim real verified exchange rates')
 
+    annual = json.loads((ROOT / 'examples' / 'annual.synthetic.json').read_text(encoding='utf-8'))
+    require('SYNTHETIC' in annual['basis'], 'Annual example must be explicitly synthetic')
+    require(annual['taxpayer_tin'].startswith('SYNTHETIC-'), 'Use a synthetic annual taxpayer')
+    for quarter in annual['quarters']:
+        require(quarter['record_id'].startswith('SYNTHETIC-'), 'Use synthetic quarter IDs')
+        for filing in quarter.get('filings', []):
+            require(filing['filing_ref'].startswith('SYNTHETIC-'), 'Use synthetic filing IDs')
+
+    for fixture in (example, annual):
+        def check_example_urls(value):
+            if isinstance(value, dict):
+                for child in value.values():
+                    check_example_urls(child)
+            elif isinstance(value, list):
+                for child in value:
+                    check_example_urls(child)
+            elif isinstance(value, str) and value.startswith(('http://', 'https://')):
+                require(urlparse(value).hostname == 'example.org',
+                        'Synthetic fixture URLs must use example.org')
+        check_example_urls(fixture)
+
     count = 0
     for path in ROOT.rglob('*'):
         relative = path.relative_to(ROOT)
@@ -75,7 +97,8 @@ def check():
                 f'Unexpected distributable file: {relative}')
         if path.suffix == '.json':
             require(relative.as_posix() in {'plugin.json', 'examples/profile.example.json',
-                                          'examples/income.synthetic.json'},
+                                          'examples/income.synthetic.json',
+                                          'examples/annual.synthetic.json'},
                     f'Unexpected JSON: {relative}; keep personal inputs outside the repo')
             json.loads(path.read_text(encoding='utf-8'))
         if path.suffix == '.md':

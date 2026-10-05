@@ -7,6 +7,8 @@ description: Prepare and verify an Armenian quarterly turnover-tax declaration i
 
 Use Chrome at https://file-online.taxservice.am/ through the available browser tool. Verify the displayed taxpayer against the user's session context or explicitly supplied private profile. Restore authentication with `armenia-tax-login` if available. Read [references/portal.md](references/portal.md) for observed form 286 controls, draft verification, and submission recovery. Inspect current controls before acting.
 
+For annual returns 240/244, use `armenia-tax-annual-returns` when available. For the statement electing turnover-tax status (form 201), use `armenia-tax-turnover-election` when available. A quarterly return does not replace the annual election or establish continued regime eligibility.
+
 ## Prepare a reviewable draft
 
 1. Obtain a finalized, auditable calculation for the requested quarter. Record recognition basis, exchange-rate rule, exact AMD total, and whole-dram treatment. Verify taxpayer status, activities, applicable form/version, income categories, activity codes/shares, rates, exemptions, and deductions against actual evidence and current official rules effective for that period. Prior filings are useful examples, not proof of continued eligibility. Do not assume software services, a special rate, or a particular form row.

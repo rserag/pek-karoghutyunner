@@ -1,4 +1,4 @@
-name: Check skills and calculator
+name: Check skills and tax arithmetic
 
 on:
   push:

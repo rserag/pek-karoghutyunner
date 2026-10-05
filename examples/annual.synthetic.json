@@ -1,0 +1,116 @@
+{
+  "year": 2025,
+  "taxpayer_tin": "SYNTHETIC-TAXPAYER-001",
+  "basis": "SYNTHETIC annual reconciliation; invented amounts, reports, methods and suspension evidence",
+  "quarters": [
+    {
+      "record_id": "SYNTHETIC-Q1-REVIEW",
+      "year": 2025,
+      "taxpayer_tin": "SYNTHETIC-TAXPAYER-001",
+      "quarter": 1,
+      "state": "accepted",
+      "source_evidence": "SYNTHETIC review of Q1 statements and current portal report list",
+      "audit": {
+        "method_verified": true,
+        "basis": "SYNTHETIC externally reviewed receipt-date recognition and rounding",
+        "source_evidence": "https://example.org/synthetic-q1-audit",
+        "precise_total_amd": "1000.494",
+        "rounded_total_amd": "1000.49"
+      },
+      "filings": [
+        {
+          "filing_ref": "SYNTHETIC-Q1-ACCEPTED",
+          "form_number": 286,
+          "state": "current_accepted",
+          "whole_dram_turnover": "1000",
+          "acceptance_evidence": "https://example.org/synthetic-q1-acceptance",
+          "current_version_evidence": "SYNTHETIC portal archive review: this is the current accepted Q1 version"
+        }
+      ]
+    },
+    {
+      "record_id": "SYNTHETIC-Q2-REVIEW",
+      "year": 2025,
+      "taxpayer_tin": "SYNTHETIC-TAXPAYER-001",
+      "quarter": 2,
+      "state": "accepted",
+      "source_evidence": "SYNTHETIC review of Q2 statements, two corrections and current portal status",
+      "audit": {
+        "method_verified": true,
+        "basis": "SYNTHETIC externally reviewed receipt-date recognition and rounding",
+        "source_evidence": "https://example.org/synthetic-q2-audit",
+        "precise_total_amd": "2000.511",
+        "rounded_total_amd": "2000.51"
+      },
+      "filings": [
+        {
+          "filing_ref": "SYNTHETIC-Q2-ORIGINAL",
+          "form_number": 286,
+          "state": "superseded_accepted",
+          "whole_dram_turnover": "1900",
+          "acceptance_evidence": "https://example.org/synthetic-q2-original-acceptance",
+          "superseded_by_filing_ref": "SYNTHETIC-Q2-CORRECTION-1"
+        },
+        {
+          "filing_ref": "SYNTHETIC-Q2-CORRECTION-1",
+          "form_number": 286,
+          "state": "superseded_accepted",
+          "whole_dram_turnover": "1950",
+          "acceptance_evidence": "https://example.org/synthetic-q2-first-correction-acceptance",
+          "superseded_by_filing_ref": "SYNTHETIC-Q2-CORRECTION-2"
+        },
+        {
+          "filing_ref": "SYNTHETIC-Q2-CORRECTION-2",
+          "form_number": 286,
+          "state": "current_accepted",
+          "whole_dram_turnover": "2001",
+          "acceptance_evidence": "https://example.org/synthetic-q2-current-acceptance",
+          "current_version_evidence": "SYNTHETIC portal evidence: second correction is current and supersedes the first correction"
+        }
+      ]
+    },
+    {
+      "record_id": "SYNTHETIC-Q3-REVIEW",
+      "year": 2025,
+      "taxpayer_tin": "SYNTHETIC-TAXPAYER-001",
+      "quarter": 3,
+      "state": "verified_no_return",
+      "source_evidence": "SYNTHETIC review of all Q3 statements, registry documents and relevant filing requirements",
+      "audit": {
+        "method_verified": true,
+        "basis": "SYNTHETIC externally reviewed receipt-date recognition and rounding",
+        "source_evidence": "https://example.org/synthetic-q3-audit",
+        "precise_total_amd": "0",
+        "rounded_total_amd": "0",
+        "zero_income_evidence": "SYNTHETIC full-quarter statement coverage reviewed; no business receipts found"
+      },
+      "no_return_reason": "SYNTHETIC externally verified no-return requirement during a documented suspension",
+      "no_return_evidence": "https://example.org/synthetic-q3-no-return-review"
+    },
+    {
+      "record_id": "SYNTHETIC-Q4-REVIEW",
+      "year": 2025,
+      "taxpayer_tin": "SYNTHETIC-TAXPAYER-001",
+      "quarter": 4,
+      "state": "accepted",
+      "source_evidence": "SYNTHETIC review of Q4 statements and current portal report list",
+      "audit": {
+        "method_verified": true,
+        "basis": "SYNTHETIC externally reviewed receipt-date recognition and rounding",
+        "source_evidence": "https://example.org/synthetic-q4-audit",
+        "precise_total_amd": "3000.254",
+        "rounded_total_amd": "3000.25"
+      },
+      "filings": [
+        {
+          "filing_ref": "SYNTHETIC-Q4-ACCEPTED",
+          "form_number": 286,
+          "state": "current_accepted",
+          "whole_dram_turnover": "3000",
+          "acceptance_evidence": "https://example.org/synthetic-q4-acceptance",
+          "current_version_evidence": "SYNTHETIC portal archive review: this is the current accepted Q4 version"
+        }
+      ]
+    }
+  ]
+}

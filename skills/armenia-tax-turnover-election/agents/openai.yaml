@@ -1,0 +1,4 @@
+interface:
+  display_name: "Armenia Turnover-Tax Election"
+  short_description: "Check eligibility and prepare Armenian form 201"
+  default_prompt: "Use $armenia-tax-turnover-election to verify my eligibility and prepare the turnover-tax election for the requested year."

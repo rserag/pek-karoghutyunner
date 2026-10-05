@@ -11,7 +11,11 @@
   "tax_context": {
     "taxpayer_status": "",
     "recognition_basis": "",
-    "activity_codes": []
+    "activity_codes": [],
+    "registration_date": "",
+    "regime_history_records": [],
+    "suspension_resumption_records": [],
+    "social_participation_records": []
   },
   "storage": {
     "private_output_directory": ""

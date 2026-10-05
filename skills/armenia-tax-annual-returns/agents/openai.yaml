@@ -1,0 +1,4 @@
+interface:
+  display_name: "Armenia annual tax returns"
+  short_description: "Prepare annual 240 and 244 turnover-tax IE returns"
+  default_prompt: "Use $armenia-tax-annual-returns to prepare and verify my requested annual 240 and/or 244 return drafts for the specified reporting year."
