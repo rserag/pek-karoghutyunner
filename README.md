@@ -1,4 +1,4 @@
-# Armenia Tax Skills
+# PEK Karoghutyunner
 
 Four reusable Codex skills for quarterly tax work in Armenia: Mobile ID login, income calculation, declaration preparation, and debt/payment review.
 
@@ -18,7 +18,7 @@ Use a Codex environment with skills support, Chrome, and an enabled browser-cont
 Ask Codex:
 
 ```text
-Use $skill-installer to install these paths from rserag/armenia-tax-skills:
+Use $skill-installer to install these paths from rserag/pek-karoghutyunner:
 skills/armenia-tax-login
 skills/armenia-tax-income
 skills/armenia-tax-declaration

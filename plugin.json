@@ -3,6 +3,6 @@
   "name": "armenia-tax-skills",
   "version": "0.1.0",
   "description": "Armenian tax workflows for Mobile ID login, quarterly receipts, turnover-tax declarations, and debt/payment review.",
-  "repository": "https://github.com/rserag/armenia-tax-skills",
+  "repository": "https://github.com/rserag/pek-karoghutyunner",
   "license": "MIT"
 }
