@@ -10,7 +10,8 @@ from urllib.parse import unquote, urlparse
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS = ('armenia-tax-login', 'armenia-tax-income',
           'armenia-tax-declaration', 'armenia-tax-annual-returns',
-          'armenia-tax-turnover-election', 'armenia-tax-balances')
+          'armenia-tax-turnover-election', 'armenia-tax-balances',
+          'armenia-tax-invoices')
 
 
 def require(condition, message):
@@ -92,6 +93,8 @@ def check():
         require(not path.is_symlink(), f'Unexpected symlink: {relative}')
         if not path.is_file():
             continue
+        require(path.name != 'account-pattern.md',
+                f'Private account context must stay outside the package: {relative}')
         require(path.suffix in {'.md', '.py', '.json', '.yaml', '.yml'}
                 or relative.as_posix() in {'LICENSE', '.gitignore'},
                 f'Unexpected distributable file: {relative}')

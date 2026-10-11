@@ -4,6 +4,7 @@ data/
 outputs/
 profile.json
 profile.local.json
+account-pattern.md
 *.local.json
 .env
 .env.*

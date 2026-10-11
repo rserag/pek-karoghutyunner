@@ -1,0 +1,4 @@
+interface:
+  display_name: "Armenia Monthly Invoices"
+  short_description: "Prepare and verify monthly service invoices"
+  default_prompt: "Use $armenia-tax-invoices to prepare the missing recent monthly service invoices using my prior invoice pattern and verified amounts."

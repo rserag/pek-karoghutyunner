@@ -1,12 +1,13 @@
 # PEK Karoghutyunner
 
-Six reusable Codex skills for quarterly and yearly tax work in Armenia: Mobile ID login, income reconciliation, quarterly declarations, annual returns, turnover-tax elections, and debt/payment review.
+Seven reusable Codex skills for monthly, quarterly, and yearly tax work in Armenia: Mobile ID login, service invoices, income reconciliation, quarterly declarations, annual returns, turnover-tax elections, and debt/payment review.
 
 The workflows use Chrome, [Armenia's tax portal](https://file-online.taxservice.am/), and the [rate.am Central Bank archive](https://www.rate.am/hy/armenian-dram-exchange-rates/central-bank-armenia). They preserve lessons from actual portal use while keeping taxpayer identities, bank statements, and filing records private.
 
 | Skill | Purpose | Result |
 |---|---|---|
 | `armenia-tax-login` | Authenticate with the user's Mobile ID and verify the taxpayer | A verified portal session |
+| `armenia-tax-invoices` | Check recent invoice gaps and reuse the established services/work account-certificate pattern | A verified saved draft, or a seller-issued invoice when requested |
 | `armenia-tax-income` | Review business receipts and historical CBA rates; reconcile current quarterly returns for a year | An audited quarterly AMD calculation or an annual income/turnover reconciliation |
 | `armenia-tax-declaration` | Check existing filings and prepare the applicable turnover-tax form | A saved draft, or an accepted filing when explicitly requested |
 | `armenia-tax-annual-returns` | Check annual applicability and prepare forms 240/244 for turnover-tax individual entrepreneurs | Separate verified liability worksheets and saved drafts, or accepted filings when requested |
@@ -27,9 +28,10 @@ skills/armenia-tax-declaration
 skills/armenia-tax-annual-returns
 skills/armenia-tax-turnover-election
 skills/armenia-tax-balances
+skills/armenia-tax-invoices
 ```
 
-For manual installation, copy the six folders under `skills/` into your environment's skill directory without overwriting existing personal versions. Each folder is self-contained; related skills are optional workflow aids. Current Codex documentation lists `~/.agents/skills` for user skills and `.agents/skills` for repository skills. Older or configured environments may use a different location. See the [official skills documentation](https://developers.openai.com/codex/skills).
+For manual installation, copy the seven folders under `skills/` into your environment's skill directory without overwriting existing personal versions. Each folder is self-contained; related skills are optional workflow aids. Current Codex documentation lists `~/.agents/skills` for user skills and `.agents/skills` for repository skills. Older or configured environments may use a different location. See the [official skills documentation](https://developers.openai.com/codex/skills).
 
 This repository also includes a portable `plugin.json` manifest for clients that support [agent plugin bundles](https://developers.openai.com/plugins/build/plugins). Browser tooling is supplied by the host; this package adds no browser server. Publication here does not imply inclusion in a plugin directory.
 
@@ -43,10 +45,15 @@ Optional registration, regime-history, suspension/resumption and social-particip
 
 Keep bank statements, extracted transactions, screenshots, drafts, receipts, and reports outside this repository. The `.gitignore` adds an extra safeguard; review staged files before publishing anything.
 
+For invoices, keep the real customer/template fields and any user-confirmed recipient-signing convention in private account context. A personal installed copy can hold `references/account-pattern.md`; do not contribute that file or copy it into a public package.
+
 ## Use
 
 ```text
 Use $armenia-tax-login to sign me in through Chrome and verify my taxpayer identity.
+
+Use $armenia-tax-invoices to prepare the missing last one or two monthly invoices.
+Check existing documents and preserve my prior pattern, changing only verified dates and amounts.
 
 Use $armenia-tax-income to review my bank statement for Q1 2024.
 Verify the applicable recognition, CBA rate-date, and rounding rules first.
@@ -70,6 +77,8 @@ additional money to send to each verified receiving account.
 The declaration workflow uses observed form 286 controls as navigation hints. It verifies the applicable form, categories, activity codes, and rates for the taxpayer and period. It has no universal software-services rate or exemption. A draft request stops at a saved unsigned draft. Filing requires an explicit request and the browser tool's required signing/confirmation steps. Payment suggestions show amounts and receiving accounts; payment execution is a separate task.
 
 The balances workflow distinguishes bank execution, treasury posting, and liability allocation. An accepted declaration may appear after the statement's cutoff. Available unified credit may remain unallocated. A transfer that has not appeared is checked before recommending another payment.
+
+The invoice workflow checks issued documents, drafts, and signing history before creating anything. It preserves the prior customer, line description, quantity, treatment, and optional blanks. Invoice serials are assigned by the portal. A draft request stops unsigned; issuance requires a request for those invoices. Where the user confirms that their foreign-customer process ends at seller issuance, an issued seller-signed invoice awaiting buyer confirmation counts as complete. This account-specific convention is not a general rule for all foreign customers.
 
 ## Yearly workflows
 
@@ -112,8 +121,8 @@ python3 scripts/check_package.py
 python3 -m unittest discover -s tests -v
 ```
 
-Tests use synthetic data only. They cover dates and quarter boundaries, duplicate receipts, currencies and quote units, rounding, input validation, escaped HTML, private output permissions, and annual completeness/correction selection/reconciliation. The package check validates all six skill folders, metadata, local links, synthetic examples, and manifest. CI runs these checks on Python 3.9 and 3.12.
+Tests use synthetic data only. They cover dates and quarter boundaries, duplicate receipts, currencies and quote units, rounding, input validation, escaped HTML, private output permissions, and annual completeness/correction selection/reconciliation. The package check validates all seven skill folders, metadata, local links, synthetic examples, and manifest. CI runs these checks on Python 3.9 and 3.12.
 
-Quarterly portal controls were observed in October 2026 and must be checked against the live page. The annual and election references distinguish public form evidence from unverified live controls. Tax rules, deadlines, and receiving accounts must be verified from current official sources for each review. Automated checks validate the package and arithmetic; they do not certify a future portal workflow or taxpayer eligibility.
+Quarterly and invoice portal controls were observed in October 2026 and must be checked against the live page. Invoice copy/save/sign transitions are based on the official guide and still require verification during authorized real use. The annual and election references distinguish public form evidence from unverified live controls. Tax rules, deadlines, and receiving accounts must be verified from current official sources for each review. Automated checks validate the package and arithmetic; they do not certify a future portal workflow or taxpayer eligibility.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for privacy requirements and workflow review scenarios. Licensed under [MIT](LICENSE).

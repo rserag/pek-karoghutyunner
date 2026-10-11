@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "armenia-tax-skills",
-  "version": "0.2.0",
-  "description": "Armenian tax workflows for Mobile ID login, income reconciliation, quarterly and annual returns, turnover-tax elections, and debt/payment review.",
+  "version": "0.3.0",
+  "description": "Armenian tax workflows for Mobile ID login, monthly service invoices, income reconciliation, quarterly and annual returns, turnover-tax elections, and debt/payment review.",
   "repository": "https://github.com/rserag/pek-karoghutyunner",
   "license": "MIT"
 }

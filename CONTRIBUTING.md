@@ -39,7 +39,15 @@ Review changed workflow instructions against these scenarios without executing a
 | Resumption occurs after February 20 | Verify the conditional restart case from actual activity/suspension history |
 | Turnover is within the limit but an activity is excluded | Resolve eligibility before attesting or preparing an election for filing |
 | A new year has an enacted form/rule change | Verify its effective date and applicable year/case before reusing old attestations or amounts |
+| A recent invoice is issued in a later month than its service period | Match service coverage before declaring a gap |
+| A matching invoice was created by another user | Retrieve it; do not create another invoice |
+| A suitable invoice draft already exists | Inspect and reuse it without touching unrelated drafts |
+| Prior invoice optional fields are blank | Preserve the pattern and change only supported period dates/amounts |
+| The foreign buyer cannot sign under the user's established process | Verify seller issuance and retain the expected pending-buyer status |
+| Seller signing times out | Inspect issued documents and signing history before retrying |
+| A payment date or rate basis is unresolved | Preserve completed checks and resolve the affected value before entry |
+| The task is to publish or test the invoice skill | Do not issue a real invoice merely for testing |
 
 Browser tool policies and user authorization govern live actions. A package test cannot establish legal eligibility, permission to sign, treasury posting, or actual payment settlement.
 
-For substantial annual/election workflow changes, use an independent synthetic forward-test when available. Ask the evaluating agent to work through realistic requests with the skill and raw evidence, without giving the intended answer. Do not execute a real filing or payment merely to test instructions.
+For substantial annual/election/invoice workflow changes, use an independent synthetic forward-test when available. Ask the evaluating agent to work through realistic requests with the skill and raw evidence, without giving the intended answer. Do not execute a real filing, invoice issuance, or payment merely to test instructions.
